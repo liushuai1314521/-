@@ -1,0 +1,4 @@
+<view class="pyg_index">
+	<!-- 搜索框结构 -->
+	<SearchInput></SearchInput>
+</view>
