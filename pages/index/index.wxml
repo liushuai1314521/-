@@ -1,4 +1,41 @@
 <view class="pyg_index">
 	<!-- 搜索框结构 -->
 	<SearchInput></SearchInput>
+	<!-- 轮播图 -->
+	<view class="index_swiper">
+		<swiper class="lunbo" autoplay indicator-dots circular interval="3000">
+			<swiper-item wx:for="{{dataList}}" wx:key="image_src">
+				<navigator url="{{item.navigator_url}}">
+					<image class="img" mode="widthFix" src="{{item.image_src}}"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 导航 -->
+	<view class="index_cate">
+		<navigator open-type="switchTab" url="/pages/category/index" class="nav" wx:for="{{cateList}}" wx:for-item="item0" wx:key="item0">
+			<image lazy-load="true" class="imag" mode="withFix" src="{{item0}}"></image>
+		</navigator>
+	</view>
+	<view class="cate">
+		<navigator class="nav" wx:for="{{text}}" wx:key="index">
+			<div>{{item}}</div>
+		</navigator>
+	</view>
+	<!-- 楼层 -->
+	<view class="index_floor">
+		<view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+			<!-- 标题 -->
+			<view class="floor_title">
+				<image lazy-load="true" class="img1" mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+			</view>
+
+			<!-- 内容 -->
+			<view class="floor_list">
+				<navigator class="nav1" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name" url="{{item2.navigator_url}}" >
+					<image lazy-load="true" class="img2" mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
+				</navigator>
+			</view>
+		</view>
+	</view>
 </view>

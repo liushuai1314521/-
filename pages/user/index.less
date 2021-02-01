@@ -1,0 +1,139 @@
+page {
+    background-color: #F2F2F2;
+}
+
+.red_bg {
+    background-color: var(--themeColor);
+}
+
+.user_info_wrap {
+    height: 40vh;
+    overflow: hidden;
+
+    .user_img_wrap {
+        position: relative;
+        left: 0;
+        top: 0;
+
+        .user_bg {
+            height: 40vh;
+            //高斯模糊
+            filter: blur(10rpx);
+        }
+
+        .user_info {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            top: 20%;
+
+            .user_avatar {
+                width: 150rpx;
+                height: 150rpx;
+                border-radius: 50%;
+            }
+
+            .user_nike {
+                color: white;
+                margin-top: 30rpx;
+                font-size: 30rpx;
+            }
+
+            .login_btn {
+                width: 220rpx;
+                color: white;
+                margin-top: 30rpx;
+                font-size: 25rpx;
+                font-weight: 600;
+                border: 2rpx solid #fff;
+                // padding: 10rpx;
+                border-radius: 20rpx;
+            }
+        }
+    }
+}
+
+.user_content {
+    position: relative;
+
+    .user_main {
+        border-radius: 20rpx;
+        position: absolute;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40rpx;
+        .address_wrap {
+            background-color: #fff;
+            margin-top: 20rpx;
+            padding: 20rpx 30rpx;
+            border-radius: 20rpx;
+            color: #666666;
+            font-size: 28rpx;
+        }
+        .app_info_item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            margin-top: 20rpx;
+            padding: 20rpx 30rpx;
+            border-radius: 20rpx;
+            color: #666666;
+            font-size: 28rpx;
+        }
+    }
+}
+
+.history_wrap {
+    padding: 10rpx;
+    display: flex;
+    background-color: #fff;
+    border-radius: 20rpx;
+    .history_link {
+        padding: 10rpx 0;
+        flex: 1;
+        text-align: center;
+
+        .his_num {
+            color: #FE5B00;
+        }
+
+        .his_name {
+            color: #666666;
+        }
+    }
+}
+
+.orders_wrap {
+    background-color: #fff;
+    border-radius: 20rpx;
+    .orders_title {
+        border-bottom: 3rpx solid #F2F2F2;
+        padding: 20rpx 30rpx;
+        margin-top: 20rpx;
+    }
+
+    .orders_content {
+        display: flex;
+
+        .order_item {
+            padding: 20rpx 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+
+            .iconfont {
+                color: var(--themeColor);
+                font-size: 40rpx;
+            }
+
+            .order_name {
+                color: #666666;
+                font-size: 26.4rpx;
+            }
+        }
+    }
+}

@@ -1,1 +1,84 @@
-<view>这里是我的</view>
+<!-- <navigator url="/pages/login/index">登录</navigator> -->
+<view wx:if="{{userinfo.nickName}}" class="user_info_wrap">
+	<view class="user_img_wrap">
+		<image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+		<view class="user_info">
+			<image class="user_avatar" src="{{userinfo.avatarUrl}}"></image>
+			<view class="user_nike">{{userinfo.nickName}}</view>
+		</view>
+	</view>
+</view>
+<view wx:else class="user_info_wrap red_bg">
+	<view class="user_img_wrap">
+		<image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+		<view class="user_info">
+			<image class="user_avatar" src="cloud://ls2622304857-zn58u.6c73-ls2622304857-zn58u-1302934638/用户.png"></image>
+			<navigator url="/pages/login/index">
+				<button type="warn" plain class="login_btn" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">
+					立即登录
+				</button>
+			</navigator>
+		</view>
+	</view>
+</view>
+<view class="user_content">
+	<view class="user_main">
+		<!-- 商品足迹 -->
+		<view class="history_wrap">
+			<navigator class="history_link">
+				<view class="his_num">0</view>
+				<view class="his_name">收藏的店铺</view>
+			</navigator>
+			<navigator url="/pages/collect/index" class="history_link">
+				<view class="his_num">{{collectName}}</view>
+				<view class="his_name">收藏的商品</view>
+			</navigator>
+			<navigator class="history_link">
+				<view class="his_num">0</view>
+				<view class="his_name">关注的商品</view>
+			</navigator>
+			<navigator class="history_link">
+				<view class="his_num">0</view>
+				<view class="his_name">我的足迹</view>
+			</navigator>
+		</view>
+		<!-- 订单结构 -->
+		<view class="orders_wrap">
+			<view class="orders_title">我的订单</view>
+			<view class="orders_content">
+				<navigator class="order_item" url="/pages/order/index?type=1">
+					<view class="iconfont icon-ding_dan"></view>
+					<view class="order_name">全部订单</view>
+				</navigator>
+				<navigator class="order_item" url="/pages/order/index?type=2">
+					<view class="iconfont icon-fukuantongzhi"></view>
+					<view class="order_name">待付款</view>
+				</navigator>
+				<navigator class="order_item" url="/pages/order/index?type=3">
+					<view class="iconfont icon-gouwuche"></view>
+					<view class="order_name">待收货</view>
+				</navigator>
+				<navigator class="order_item">
+					<view class="iconfont icon-jinqian-fanli"></view>
+					<view class="order_name">退款/退货</view>
+				</navigator>
+			</view>
+		</view>
+		<!-- 收货地址管理 -->
+		<view class="address_wrap">收货地址管理</view>
+		<!-- 应用信息相关 -->
+		<view class="app_info_wrap">
+			<view bindtap="callFn" class="app_info_item">
+				<text>联系客服</text>
+				<text>17853635005</text>
+			</view>
+			<view class="app_info_item">意见反馈</view>
+			<view class="app_info_item">关于我们</view>
+			<navigator url="/pages/map/index">
+				<view class="app_info_item" style="color:red;font-weight:600">地图（测试）</view>
+			</navigator>
+		</view>
+		<!-- 分享 -->
+		<view class="app_info_item">把应用推荐给其他人</view>
+	</view>
+</view>

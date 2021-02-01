@@ -1,4 +1,51 @@
-view {
-  /* 使用主体颜色 */
- /*  color: var(--themeColor) */
+.lunbo {
+  width: 750rpx;
+  height: 355rpx;
+}
+.img {
+  width: 100%;
+}
+.index_cate {
+  display: flex;
+  justify-content: space-around;
+}
+.nav {
+  margin-top: 20rpx;
+}
+.imag {
+  width: 120rpx;
+  height: 120rpx;
+}
+.cate {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -25rpx;
+}
+.index_floor .floor_group .floor_title {
+  padding: 10rpx 0 0 0;
+}
+.index_floor .floor_group .floor_title .img1 {
+  width: 100%;
+}
+.index_floor .floor_group .floor_list {
+  overflow: hidden;
+}
+.index_floor .floor_group .floor_list .nav1 {
+  float: left;
+  width: 33.33%;
+}
+.index_floor .floor_group .floor_list .nav1:nth-last-child(-n+4) {
+  /* 原图宽高232*386 */
+  /* 232/386 = 33.33vw/height */
+  /* 第一张图片的高度height:33.33vw*386/232 */
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.index_floor .floor_group .floor_list .nav1:nth-child(2),
+.index_floor .floor_group .floor_list .nav1:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.index_floor .floor_group .floor_list .nav1 .img2 {
+  width: 100%;
+  height: 100%;
 }

@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/category/index",
     "pages/goods_list/index",
-    "pages/goos_detail/index",
+    "pages/goods_detail/index",
     "pages/cart/index",
     "pages/collect/index",
     "pages/order/index",
@@ -12,7 +12,8 @@
     "pages/feedback/index",
     "pages/login/index",
     "pages/auth/index",
-    "pages/pay/index"
+    "pages/pay/index",
+    "pages/map/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,7 +27,8 @@
     "backgroundColor": "#ffffff",
     "position": "bottom",
     "borderStyle": "black",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "icons/home.png",

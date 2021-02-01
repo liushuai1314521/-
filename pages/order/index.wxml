@@ -1,2 +1,14 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+	<Tabs tabs="{{tabs}}" bindtabsItemChange="handletabsItemChange">
+		<block wx:if="{{tabs[0].isActive}}">
+			<view class="order_query">全部订单（测试）</view>
+		</block>
+		<block wx:if="{{tabs[1].isActive}}">
+			<view class="order_query">待发货</view>
+		</block>
+		<block wx:if="{{tabs[2].isActive}}">
+			<view class="order_query">待收货</view>
+		</block>
+		<block wx:if="{{tabs[3].isActive}}">
+			<view class="order_query">退款/退货</view>
+		</block>
+	</Tabs>

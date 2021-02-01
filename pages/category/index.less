@@ -1,0 +1,66 @@
+page {
+    height: 100%;
+}
+.cates {
+    height: 100%;
+    .cates_container {
+        /* less编译 height: calc(100vh-90rpx);不识别，需要加~'' */
+        height: ~'calc(100vh-90rpx)';
+        display: flex;
+
+        .left_menu {
+            height: 100vh;
+            .menu_item {
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30rpx;
+            }
+            .active{
+                color: var(--themeColor);
+                border-left: 5rpx solid currentColor;
+            }
+            /* 子项 高度 100% flex */
+            flex: 2;
+        }
+        .right_content {
+            height: 100vh;
+            .goods_group {
+                .goods_title {
+                    height: 80rpx;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .delimiter {
+                        color: #ccc;
+                        padding: 0 10rpx;
+                    }
+                    .title {
+                        font-size: 30rpx;
+                    }
+                }
+                .goods_list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .nav2 {
+                        width: 33.33%;
+                        text-align: center;
+                        margin-top: 10rpx;
+                        .img3 {
+                            width: 60%;
+                        }
+                        .goods_name {
+                            color: gray;
+                        }
+                    }
+                }
+            }
+
+            /* 子项 高度 100% flex */
+            flex: 5;
+
+        }
+    }
+}

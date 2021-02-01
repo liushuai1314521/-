@@ -1,0 +1,91 @@
+<view class="detail_swiper">
+	<swiper autoplay circular indicator-dots class="swiper1">
+		<swiper-item bindtap="handlePreviewImage" class="swiper_item1" wx:for="{{goodsObj.pics}}" data-url="{{item.pics_mid}}" wx:key="pics_id">
+			<image class="image1" mode="widthFix" src="{{item.pics_mid?item.pics_mid:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="price_star">
+<view class="goods_price">¥{{goodsObj.goods_price}}</view>
+<text bindtap="handleCollect" class="iconfont {{isCollect?'icon-jinqian-fanli':'icon-shoucang'}}"></text>
+</view>
+<view class="goods_name_row">
+	<view class="tit">
+		<view class="goods_name">{{goodsObj.goods_name}}</view>
+		<view class="link_title">
+			<a>【开学季】①享6期免息②积分双倍抵现，最高抵50元③赠三只松鼠满减券④V1及以上老用户加赠延保|以旧换新最高补贴1818元，点击参与>>></a>
+		</view>
+	</view>
+<!-- 	<view class="goods_collect">
+        <text class="iconfont icon-shoucang"></text>
+        <view class="collect_text">收藏</view>
+    </view> -->
+</view>
+<view class="goods_info">
+	<view class="goods_title1">
+		<view class="left_title">促销</view>
+		<view class="mid_content">
+			<ul class="ulItem">
+				<li class="li_item">
+					<p class="border_beauty">一站式换新</p>
+					<p class="txt">APP专享，</p>
+					<p class="txt">最高补贴530元</p>
+				</li>
+				<li class="li_item">
+					<p class="border_beauty">商品赠券</p>
+					<p class="txt">三只松鼠满减礼包</p>
+				</li>
+				<li class="li_item">
+					<p class="border_beauty">积分双倍抵现</p>
+					<p class="border_beauty">分期免息</p>
+					<p class="border_beauty">赠送积分</p>
+				</li>
+			</ul>
+		</view>
+		<view class="icon1">...</view>
+	</view>
+	<view class="goods_title2">
+		<view class="left_titles">保障</view>
+		<view class="mid_contents">
+			<p class="txts">选购</p>
+			<p class="border_beauties">延长宝</p>
+			<p class="border_beauties">碎屏险</p>
+		</view>
+		<view class="icons">...</view>
+	</view>
+	<view class="goods_title2">
+		<view class="left_titles">免息</view>
+		<view class="mid_mianxi">
+			<p class="txt1">花呗/掌上生活分期直购，最高享6期免息</p>
+		</view>
+		<view class="icons">...</view>
+	</view>
+	<view class="goods_title">图文详情</view>
+	<view class="goods_info_content">
+		<!-- 富文本 -->
+		<rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
+	</view>
+</view>
+<view class="btm_tool" style="margin-bottom: {{isIphoneX ? '48rpx' : '0rpx'}}" >
+	<view class="tool_item">
+		<view class="iconfont icon-kefu"></view>
+		<view class="car_txt">客服</view>
+		<button open-type="contact" class="btn_false">1</button>
+	</view>
+	<view class="tool_item">
+		<view class="iconfont icon-share_icon"></view>
+		<view class="car_txt">分享</view>
+		<button open-type="share" class="btn_false">1</button>
+	</view>
+	<navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+		<view class="iconfont icon-gouwuche"></view>
+		<view class="car_txt">购物车</view>
+		<view class="car_total">{{Car_totla}}</view>
+	</navigator>
+	<view class="tool_item btn_cart" bindtap="handleCartAdd">加入购物车</view>
+	<navigator class="tool_item btn_buy" url="/pages/pay/index?id=119">
+		立即购买
+	</navigator>
+</view>
+<view wx:if="{{isIphoneX}}" class="bottom_youhua"></view>
+<view wx:else></view>

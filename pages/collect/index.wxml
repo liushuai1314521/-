@@ -1,2 +1,33 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handletabsItemChange">
+	<block wx:if="{{tabs[0].isActive}}">
+		<view class="order_query">
+			<view class="cart_content">
+				<view class="cart_main">
+					<view class="cart_item" wx:for="{{collectObj}}" wx:key="index">
+						<navigator class="cart_img_wrap" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+							<image class="img5" mode="widthFix" src="{{item.goods_small_logo}}"></image>
+						</navigator>
+						<view class="cart_info_wrap">
+							<view class="goods_name">{{item.goods_name}}</view>
+							<view class="goods_price_wrap">
+								<view class="goods_price">¥{{item.goods_price}}</view>
+								<!-- <view class="cart_num_tool">
+                                    <view class="goods_num">x1</view>
+                                </view> -->
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:if="{{tabs[1].isActive}}">
+		<view class="order_query">品牌收藏</view>
+	</block>
+	<block wx:if="{{tabs[2].isActive}}">
+		<view class="order_query">店铺收藏</view>
+	</block>
+	<block wx:if="{{tabs[3].isActive}}">
+		<view class="order_query">浏览足迹</view>
+	</block>
+</Tabs>

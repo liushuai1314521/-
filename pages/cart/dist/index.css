@@ -1,0 +1,39 @@
+page {
+  background-color: #F2F2F2;
+}
+.revice_address_row .address_btn {
+  padding: 20rpx;
+}
+.revice_address_row .detail_address .address_beauty {
+  padding: 20rpx;
+  background-color: #fff;
+  width: 90%;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+}
+.revice_address_row .detail_address .address_beauty .address_left {
+  flex: 1;
+}
+.revice_address_row .detail_address .address_beauty .address_left .iconfont {
+  font-size: 60rpx;
+  text-align: center;
+  color: var(--themeColor);
+}
+.revice_address_row .detail_address .address_beauty .address_right {
+  flex: 5;
+}
+.revice_address_row .detail_address .address_beauty .address_right .user_tel {
+  display: flex;
+  align-items: center;
+}
+.revice_address_row .detail_address .address_beauty .address_right .user_tel .address_name {
+  color: #333333;
+  font-size: 30rpx;
+  margin-right: 15rpx;
+}
+.revice_address_row .detail_address .address_beauty .address_right .user_tel .address_tel {
+  font-size: 26rpx;
+  color: #999999;
+}

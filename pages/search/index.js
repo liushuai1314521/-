@@ -1,66 +1,54 @@
-// pages/search/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    search_list: [],
+    //取消按钮
+    isFocus:false,
+    inputVal:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  TimeId:-1,
+  cancelBtn(){
+    this.setData({
+      isFocus:false,
+      search_list:[],
+      inputVal:''
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //输入框的值改变触发事件
+  handleInput(e) {
+    //检测输入框的值
+    const { value } = e.detail;
+    const query = value
+    //检测合法性 !value.trim()表示不合法
+    if (!query.trim()) {
+      this.setData({
+        search_list:[],
+        isFocus:false
+      })
+      return;
+    }
+    //显示取消按钮
+    this.setData({
+      isFocus:true
+    })
+    clearTimeout(this.TimeId)
+    this.TimeId = setTimeout(()=>{
+      wx.showLoading({
+        title: '加载中...',
+      })
+       //发送请求获取数据
+    wx.request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/goods/qsearch',
+      data: { query },
+      success: (result) => {
+        if (result.data.meta.status == 200) {
+          wx.hideLoading();
+          const search_list = result.data.message
+          this.setData({
+            search_list
+          })
+        }
+      },
+    })
+    },1000)
   }
 })
